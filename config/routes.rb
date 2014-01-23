@@ -1,4 +1,26 @@
 IHardie::Application.routes.draw do
+
+  get "pages/home"
+  root :to => 'pages#home'
+  
+  match '/home',   :to => 'pages#home'
+
+  get "pages/contact"
+  match '/contact', :to => 'pages#contact'
+
+  get "pages/about"
+  match '/about',   :to => 'pages#about'
+
+  get "pages/terms"
+  match '/terms',   :to => 'pages#terms'
+
+  resources :products
+  resources :comments
+  resources :questions
+  resources :inquiries
+  
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

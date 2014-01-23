@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comment: MyString
+  user: 1
+  questionID: 1
+  accepted: false
+  feedback: MyString
+
+two:
+  comment: MyString
+  user: 1
+  questionID: 1
+  accepted: false
+  feedback: MyString

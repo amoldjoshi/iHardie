@@ -1,0 +1,7 @@
+<div id="menu">
+	<ul>
+			<%= link_to_unless_current "My Questions",   :controller => "questions", :action => :index %> |
+		    <%= link_to_unless_current "My Comments",  :controller => "comments",  :action => :index %> |
+		    <%= link_to_unless_current "My inquiries", :controller => "inquiries",  :action => :index %>
+	</ul>
+</div><!--End menu box.-->
