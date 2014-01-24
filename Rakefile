@@ -4,4 +4,9 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+require 'rake/dsl_definition'
+class Rails::Application 
+  include Rake::DSL 
+end 
+
 IHardie::Application.load_tasks

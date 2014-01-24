@@ -25,6 +25,9 @@ gem 'role_model'
 
 gem 'jquery-rails'
 
+group :production do 
+	gem 'ps'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
