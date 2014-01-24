@@ -1,8 +1,9 @@
 IHardie::Application.routes.draw do
 
+  devise_for :users
+  
   get "pages/home"
   root :to => 'pages#home'
-  
   match '/home',   :to => 'pages#home'
 
   get "pages/contact"
@@ -19,7 +20,6 @@ IHardie::Application.routes.draw do
   resources :questions
   resources :inquiries
   
-  devise_for :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

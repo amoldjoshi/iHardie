@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--This page has all the box lay out for 36 links.-->
+<div class = "span-24 last box">
+       		<%=render 'layouts/menu' %>
+	</div><!--End span-24 box.-->
+
+<div class = "span-24 box">
+	
+    <div class ="span-20 last">
+		<h3>Your SmartSearch Start Here!</h3><br/>
+	</div><!--End Span-20 Last.-->
+	<div class ="span-20 last">
+	<script>
+  (function() {
+    var cx = '010825301222972986960:qidy2y__65e';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+	</div><!--End Span-20 Last.-->
+	
+</div><!--End Span-24.-->
