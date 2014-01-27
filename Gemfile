@@ -26,7 +26,7 @@ group :development, :test do
 end
 
 group :production do 
-	gem 'ps'
+	gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
