@@ -1,7 +1,7 @@
 /*This file is designed by Amol Joshi on April 12, 2011.*/
 body {
 	/*background-image:url(../images/Back3.png);*/
-	background-color: #ddd;
+	background-color: #bbb;
 	color: #000000;
 	font-family: sans-serif, Arial, Helvetica,  Verdana;
 	font-size: 12px;
@@ -104,8 +104,8 @@ h4 {
 }
 /********************** Main ***************************/
 #main {
-	/*background-image:url(../images/Back3.png);*/
-	background: #aaa;
+	/*background-image:url(../images/Back.png);*/
+	background: #eee;
 	background-repeat: repeat-y;
 	display:block;
 	width:1000px;
