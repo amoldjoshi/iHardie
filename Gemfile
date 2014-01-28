@@ -24,7 +24,7 @@ gem 'jquery-rails'
 group :development, :test do 
     gem 'sqlite3-ruby'
 end
-
+#Amol Changed group above and below .  Jan 27, 2014.
 group :production do 
 	gem 'pg'
 end

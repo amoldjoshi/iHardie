@@ -16,6 +16,7 @@ IHardie::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
+  #Amol changed the above line. Jan 27, 2014.
 
   # Generate digests for assets URLs
   config.assets.digest = true
