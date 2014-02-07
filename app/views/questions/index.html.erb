@@ -1,37 +1,47 @@
 <!--<h1>Listing questions</h1>-->
- 		<div class = "span-24 last box">
+<div class= "column span-24"> 		
+	<div class = "span-24 last box">
        		<%=render 'layouts/menu' %>
 	</div><!--End span-24 box.-->
-<table>
-  <tr>
-    <th>Question</th>
-    <th>Answer</th>
-    <th>Product</th>
-    <th>Priority</th>
-    <th>User</th>
-    <th>Type</th>
-    <th>Favorite</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	
+	<div class = "span-24 last box">
+	<table>
+	  <tr>
+	    <th>Question</th>
+	    <th>Answer</th>
+	    <th>Product</th>
+	    <th>Priority</th>
+	    <th>User</th>
+	    <th>Type</th>
+	    <th>Favorite</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @questions.each do |question| %>
+			<tr class= "<%= cycle("rowA", "rowB")%>">
+	    <td><%= question.question %></td>
+	    <td><%= question.answer %></td>
+	    <td><%= question.product %></td>
+	    <td><%= question.priority %></td>
+	    <td><%= question.user %></td>
+	    <td><%= question.type %></td>
+	    <td><%= question.favorite %></td>
+		<%if can? :update, question%>
+		    <td><%= link_to 'Show', question %></td>
+		    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+		<%end%>
+    			
+		<%if can? :destroy, question%>
+		    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<%end%>
+	  </tr>
+	<% end %>
+	</table>
+	<br />
+	</div><!--End span-24 box.-->
+</div><!--End span-24 box.-->
 
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.question %></td>
-    <td><%= question.answer %></td>
-    <td><%= question.product %></td>
-    <td><%= question.priority %></td>
-    <td><%= question.user %></td>
-    <td><%= question.type %></td>
-    <td><%= question.favorite %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Question', new_question_path %>

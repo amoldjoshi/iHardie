@@ -1,31 +1,45 @@
 <!--<h1>Listing inquiries</h1>-->
- 		<div class = "span-24 last box">
+<div class= "column span-24"> 		
+	<div class = "span-24 last box">
        		<%=render 'layouts/menu' %>
 	</div><!--End span-24 box.-->
-<table>
-  <tr>
-    <th>Inquiry</th>
-    <th>User</th>
-    <th>Actiontaken</th>
-    <th>Question</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	
+	<div class = "span-24 last box">
+	<table>
+	  <tr>
+	    <th>Inquiry</th>
+	    <th>User</th>
+	    <th>Actiontaken</th>
+	    <th>Question</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @inquiries.each do |inquiry| %>
+	  <tr class= "<%= cycle("rowA", "rowB")%>">
+	    <td><%= inquiry.inquiry %></td>
+	    <td><%= inquiry.user %></td>
+	    <td><%= inquiry.actiontaken %></td>
+	    <td><%= inquiry.question %></td>
+			
+	    <%if can? :update, inquiry%>
+		    <td><%= link_to 'Show', inquiry %></td>
+		    <td><%= link_to 'Edit', edit_inquiry_path(inquiry) %></td>
+		<%end%>
+		
+		<%if can? :destroy, inquiry%>
+	    	<td><%= link_to 'Destroy', inquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    <%end%>
+	  </tr>
+	<% end %>
+	</table>
+	
+	<br />
+	</div><!--End span-24 box.-->
+</div><!--End span-24 box.-->
 
-<% @inquiries.each do |inquiry| %>
-  <tr>
-    <td><%= inquiry.inquiry %></td>
-    <td><%= inquiry.user %></td>
-    <td><%= inquiry.actiontaken %></td>
-    <td><%= inquiry.question %></td>
-    <td><%= link_to 'Show', inquiry %></td>
-    <td><%= link_to 'Edit', edit_inquiry_path(inquiry) %></td>
-    <td><%= link_to 'Destroy', inquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+
 
 <%= link_to 'New Inquiry', new_inquiry_path %>
