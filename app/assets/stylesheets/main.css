@@ -1,7 +1,7 @@
 /*This file is designed by Amol Joshi on April 12, 2011.*/
 body {
 	background-image:url('Back3.png');
-	background-repeat:no-repeat;
+	background-repeat:repeat;
 	background-size: 100%, 100%;
 	/*background-color: #FFFFFF;*/
 	color: #000000;
@@ -52,7 +52,7 @@ body {
 	position:absolute;
 	top:0px;
 	left:0px;
-	padding: 0px 0px 0px 600px;
+	padding: 0px 0px 0px 550px;
 }
 #menu li{
 	float:left;
