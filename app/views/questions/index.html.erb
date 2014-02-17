@@ -9,25 +9,22 @@
 	  <tr>
 	    <th>Question</th>
 	    <th>Answer</th>
-	    <th>Product</th>
+	    <!--<th>Product</th>
 	    <th>Priority</th>
 	    <th>User</th>
 	    <th>Type</th>
-	    <th>Favorite</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
+	    <th>Favorite</th>-->
 	  </tr>
 	
 	<% @questions.each do |question| %>
 			<tr class= "<%= cycle("rowA", "rowB")%>">
 	    <td><%= question.question %></td>
 	    <td><%= question.answer %></td>
-	    <td><%= question.product %></td>
+	    <!--<td><%= question.product %></td>
 	    <td><%= question.priority %></td>
 	    <td><%= question.user %></td>
 	    <td><%= question.type %></td>
-	    <td><%= question.favorite %></td>
+	    <td><%= question.favorite %></td>-->
 		<%if can? :update, question%>
 		    <td><%= link_to 'Show', question %></td>
 		    <td><%= link_to 'Edit', edit_question_path(question) %></td>
