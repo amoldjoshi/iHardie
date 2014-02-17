@@ -13,8 +13,7 @@
   </tr>
 
 <% @products.each do |product| %>
-		<tr class= "<%= cycle("rowA", "rowB")%>">
-  <tr>
+  <tr class= "<%= cycle("rowA", "rowB")%>">
     <td><%= product.name %></td>
     <td><%= link_to("Product Page!", product)%></td>
 	<td><%= link_to("Let's Go!", url_with_protocol(product.installinstruction),:target => :blank, :class => "letsgo_button round" )%></td>
