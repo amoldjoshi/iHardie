@@ -1,31 +1,32 @@
 <div class = "span-24 box">
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Comment:</b>
-  <%= @comment.comment %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @comment.user %>
-</p>
-
-<p>
-  <b>Questionid:</b>
-  <%= @comment.questionID %>
-</p>
-
-<p>
-  <b>Accepted:</b>
-  <%= @comment.accepted %>
-</p>
-
-<p>
-  <b>Feedback:</b>
-  <%= @comment.feedback %>
-</p>
+	<p id="notice"><%= notice %></p>
+	
+	<p>
+	  <b>Comment:</b>
+	  <%= @comment.comment %>
+	</p>
+	
+	<p>
+	  <b>User:</b>
+	  <%= @comment.user %>
+	</p>
+	
+	<p>
+	  <b>Questionid:</b>
+	  <%= @comment.questionID %>
+	</p>
+	
+	<p>
+	  <b>Accepted:</b>
+	  <%= @comment.accepted %>
+	</p>
+	
+	<p>
+	  <b>Feedback:</b>
+	  <%= @comment.feedback %>
+	</p>
+	
+	
+	<%= link_to 'Edit', edit_comment_path(@comment) %> |
+	<%= link_to 'Back', comments_path %>
 </div>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>

@@ -1,29 +1,31 @@
 <!--<h1>Listing products</h1>-->
- 		<div class = "span-24 last box">
+ 	<div class = "span-24 last box">
        		<%=render 'layouts/menu' %>
-	</div><!--End span-24 box.-->
+	</div> <!--End span-24 box.-->
 
 <div class = "span-24 last box">
 <table>
   <tr>
     <th>Name</th>
-    <th>Sku</th>
-    <th>Installinstruction</th>
-    <th>Video</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Product's Page</th>
+    <th>Install Instruction</th>
+    <!--<th>Video</th>-->
   </tr>
 
 <% @products.each do |product| %>
+		<tr class= "<%= cycle("rowA", "rowB")%>">
   <tr>
     <td><%= product.name %></td>
-    <td><%= product.sku %></td>
-    <td><%= product.installinstruction %></td>
-    <td><%= product.video %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to("Product Page!", product)%></td>
+	<td><%= link_to("Let's Go!", url_with_protocol(product.installinstruction),:target => :blank, :class => "letsgo_button round" )%></td>
+	<%if can? :update, product%>
+	    <td><%= link_to 'Show', product %></td>
+	    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+	<%end%>
+    			
+	<%if can? :destroy, product%>
+		<td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<%end%>
   </tr>
 <% end %>
 </table>
