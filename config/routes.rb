@@ -1,5 +1,9 @@
 IHardie::Application.routes.draw do
 
+  get "welcome/show"
+
+  get "autocomplete_searches/Index"
+
   devise_for :users
   
   get "pages/home"
@@ -19,7 +23,15 @@ IHardie::Application.routes.draw do
   resources :comments
   resources :questions
   resources :inquiries
+   
+  get "welcome/show"
+  root :to => "welcome#show"
+  get 'welcome/autocomplete_question_question'
   
+  #resources :welcomes do
+    #get :autocomplete_question_question, :on => :collection
+  #end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

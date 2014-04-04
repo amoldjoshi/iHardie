@@ -19,7 +19,7 @@ gem 'devise'
 gem 'cancan'
 gem 'role_model'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.0'
 
 group :development, :test do 
     gem 'sqlite3-ruby'
@@ -28,6 +28,10 @@ end
 group :production do 
 	gem 'pg'
 end
+gem 'rails3-jquery-autocomplete'
+
+gem 'meta_search'
+gem 'will_paginate'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -43,3 +47,4 @@ end
 
 # To use debugger
 # gem 'debugger'
+

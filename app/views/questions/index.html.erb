@@ -5,6 +5,38 @@
 	</div><!--End span-24 box.-->
 	
 	<div class = "span-24 last box">
+	<%= form_for @search do |f|%>
+		<p>
+			<%= f.label :question_contains %>
+			<%= f.text_field :question_contains %>
+		<p class = "button"><%=f.submit "Search"%>
+		</p>
+		<p>
+			<%= sort_link @search, :priority%>|
+			<%= sort_link @search, :question%>
+		</p>
+	<%end%>
+	
+	
+	<div class ="span-20 last">
+		<script>
+		  (function() {
+		    var cx = '010825301222972986960:qidy2y__65e';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//www.google.com/cse/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:search></gcse:search>
+		</div>
+		
+	</div><!--End span-24 box.-->
+	
+	<div class = "span-24 last box">
 	<table>
 	  <tr>
 	    <th>Question</th>
@@ -18,7 +50,7 @@
 	
 	<% @questions.each do |question| %>
 			<tr class= "<%= cycle("rowA", "rowB")%>">
-	    <td><%= question.question %></td>
+	    <td><%= link_to question.question, question %></td>
 	    <td><%= question.answer %></td>
 	    <!--<td><%= question.product %></td>
 	    <td><%= question.priority %></td>
