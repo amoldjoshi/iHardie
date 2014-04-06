@@ -43,9 +43,8 @@ body {
 	color: none;
 	text-align:right;
   	position:relative;
-	/*background-image:url(../images/menu.jpg);*/
 	background-repeat:no-repeat;
-	width:920px;
+	width:940px;
 	height:10px;
 }
 #menu ul{
@@ -116,10 +115,11 @@ h4 {
 	width:1000px;
 	height:auto;
 }
-#content {
+#content{
 	background-image:url(../images/Back.png);
 	background-repeat: repeat-y;
 	width:950px;
+	min-height: 100%;
 }
 /********************** Left - Text ***************************/
 #left {
@@ -163,13 +163,15 @@ h4 {
 /********************** Footer ***************************/
 #footer {
 	/*background-image:url(../images/Footer.png);*/
-	background: #AAAAAA;
+	background: #2E9AFE;
 	background-repeat:no-repeat;
 	width:950px;
 	height:30px;
 	text-align:center;
 	float:left;
 	clear:both;
+    bottom: 0px;
+	position: absolute;
 }
 #footer ul{
 
