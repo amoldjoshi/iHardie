@@ -19,6 +19,9 @@
 	</div>
 	
 	<div class = "span-24 last box">
+	<% if params[:search].blank? %>
+		<%= "No matching Answers found yet."%>
+	<% else %>
 	<table>
 	  <tr>
 	    <th>Question</th>
@@ -29,7 +32,6 @@
 	    <th>Type</th>
 	    <th>Favorite</th>-->
 	  </tr>
-	
 	<% @questions.each do |question| %>
 	 <tr class= "<%= cycle("rowA", "rowB")%>">
 	    <td><%= link_to question.question, question %></td>
@@ -49,10 +51,10 @@
 		<%end%>
 	  </tr>
 	 <% end %>
+	 <%end%>
 	</table>
 	<br />
-	</div><!--End span-24 box.-->
+</div><!--End span-24 box.-->
 
+<!--<%= link_to 'New Question', new_question_path %>-->
 
-
-<%= link_to 'New Question', new_question_path %>

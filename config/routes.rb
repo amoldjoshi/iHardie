@@ -1,8 +1,7 @@
 IHardie::Application.routes.draw do
 
   get "welcome/show"
-
-  get "autocomplete_searches/Index"
+  root :controller => 'questions', :action => :index
 
   devise_for :users
   

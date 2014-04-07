@@ -4,15 +4,12 @@ class QuestionsController < ApplicationController
 
   def index
     @search = Question.search(params[:search])
-    @questions = @search.paginate(:page => params[:page], :per_page => 5)
+   	@questions = @search.paginate(:page => params[:page], :per_page => 5)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }
     end
   end
-
-
-
 
   # GET /questions/1
   # GET /questions/1.json
