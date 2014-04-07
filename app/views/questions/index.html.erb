@@ -10,10 +10,8 @@
 				<%= f.label :question_contains %>
 				<%= f.text_field :question_contains %>
 			    <class = "button"><%=f.submit "Search iHardie"%>
-			</p>
-			<p>
-				<%= sort_link @search, :priority%>|
 				<%= sort_link @search, :question%>
+				<%= sort_link @search, :priority%>|
 			</p>
 		<%end%>
 	</div>
