@@ -36,7 +36,20 @@
 	  <%= @question.favorite %>
 	</p>
 	
+	<p>
+	  <b>Accel Link:</b>
+	  <%= @question.accellink %>
+	</p>
 	
+	<p>
+	  <b>Hardie Link:</b>
+	  <%= @question.hardielink %>
+	</p>
+	
+	<p>
+	  <b>Others:</b>
+	  <%= @question.youtubelink %>
+	</p>	
 	<%= link_to 'Edit', edit_question_path(@question) %> |
 	<%= link_to 'Back', questions_path %>
 </div><!--End Span-24.-->
