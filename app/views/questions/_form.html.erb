@@ -33,12 +33,24 @@
 	    <%= f.number_field :user %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :type %><br />
-	    <%= f.text_field :type %>
+	    <%= f.label :questiontype %><br />
+	    <%= f.text_field :questiontype %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :favorite %><br />
 	    <%= f.check_box :favorite %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :accellink %><br />
+	    <%= f.check_box :accellink %>
+	  </div>
+	  	  <div class="field">
+	    <%= f.label :hardielink %><br />
+	    <%= f.check_box :hardielink %>
+	  </div>
+	  	  <div class="field">
+	    <%= f.label :youtubelink %><br />
+	    <%= f.check_box :youtubelink %>
 	  </div>
 	  <div class="actions">
 	    <%= f.submit %>

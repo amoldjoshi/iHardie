@@ -29,7 +29,7 @@
 	    <!--<th>Product</th>
 	    <th>Priority</th>
 	    <th>User</th>
-	    <th>Type</th>
+	    <th>QuestionType</th>
 	    <th>Favorite</th>-->
 	  </tr>
 	<% @questions.each do |question| %>
@@ -39,8 +39,11 @@
 	    <!--<td><%= question.product %></td>
 	    <td><%= question.priority %></td>
 	    <td><%= question.user %></td>
-	    <td><%= question.type %></td>
-	    <td><%= question.favorite %></td>-->
+	    <td><%= question.questiontype %></td>
+	    <td><%= question.favorite %></td>
+	    <td><%= question.accellink %></td>
+	    <td><%= question.hardielink %></td>
+	    <td><%= question.youtubelink %></td>-->
 		<%if can? :update, question%>
 		    <td><%= link_to 'Show', question %></td>
 		    <td><%= link_to 'Edit', edit_question_path(question) %></td>
