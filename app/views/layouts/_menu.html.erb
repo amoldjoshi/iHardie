@@ -1,8 +1,23 @@
-<div id="menu">
-	<ul>
-			<%= link_to_unless_current "My Questions",   :controller => "questions", :action => :index %> |
-		    <%= link_to_unless_current "My Comments",  :controller => "comments",  :action => :index %> |
-		    <%= link_to_unless_current "My inquiries", :controller => "inquiries",  :action => :index %>|
-		    <%= link_to_unless_current "Hardie Products", :controller => "products",  :action => :index %>
-		    </ul>
-</div><!--End menu box.-->
+<nav class="navbar" "navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a> 
+			<div class="nav-collapse collapse">  
+				<ul class="nav pull-right">
+					<div class="row">
+						<div class="span5">
+							<%= link_to_unless_current "My Questions",   :controller => "questions", :action => :index %> |
+						    <%= link_to_unless_current "My Comments",  :controller => "comments",  :action => :index %> |
+						    <%= link_to_unless_current "My inquiries", :controller => "inquiries",  :action => :index %>|
+						    <%= link_to_unless_current "Hardie Products", :controller => "products",  :action => :index %>   		
+		    			</div>
+					</div>
+				</ul>
+	      </div><!--End container.-->
+	    </div><!-- nav var inner -->
+    </div>	<!--navbar.-->
+</div><!--End header.-->

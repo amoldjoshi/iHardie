@@ -1,55 +1,41 @@
-<div class = "span-24 box">
-	<p id="notice"><%= notice %></p>
-	
-	<p>
-	  <b>Question:</b>
-	  <%= @question.question %>
-	</p>
-	
-	<p>
-	  <b>Answer:</b>
-	  <%= @question.answer %>
-	</p>
-	
-	<p>
-	  <b>Product:</b>
-	  <%= @question.product %>
-	</p>
-	
-	<p>
-	  <b>Priority:</b>
-	  <%= @question.priority %>
-	</p>
-	
-	<p>
-	  <b>User:</b>
-	  <%= @question.user %>
-	</p>
-	
-	<p>
-	  <b>Type:</b>
-	  <%= @question.questiontype %>
-	</p>
-	
-	<p>
-	  <b>Favorite:</b>
-	  <%= @question.favorite %>
-	</p>
-	
-	<p>
-	  <b>Accel Link:</b>
-	  <%= @question.accellink %>
-	</p>
-	
-	<p>
-	  <b>Hardie Link:</b>
-	  <%= @question.hardielink %>
-	</p>
-	
-	<p>
-	  <b>Others:</b>
-	  <%= @question.youtubelink %>
-	</p>	
-	<%= link_to 'Edit', edit_question_path(@question) %> |
-	<%= link_to 'Back', questions_path %>
-</div><!--End Span-24.-->
+<%- model_class = Question -%>
+
+<div class="container">
+	<div class = "row">	
+		<div class="span1"></div>
+			<div class ="span10">
+			<div class="page-header">
+			  <h3><%= @question.question %></h3>
+			</div>
+	</div></div>
+    
+	<div class = "row">
+		<div class="span1"></div>
+		<div class ="span10"><h3>Answer:</h3></div>
+	<div>
+		
+	<div class = "row">	<div class ="span8">
+		<dl class="dl-horizontal">
+		  <dd><%= @question.answer %></dd>
+		  <dd><%= @question.product %></dd>
+		  <dd><%= @question.youtubelink %></dd>
+		</dl>
+	</div></div>
+
+
+	<div class = "row">
+	<div class="span1"></div>
+	<div class ="span8">
+		<div class="form-actions">
+		  <%= link_to t('.back', :default => t("helpers.links.back")),
+		              questions_path, :class => 'btn'  %>
+		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+		              edit_question_path(@question), :class => 'btn' %>
+		  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+		              question_path(@question),
+		              :method => 'delete',
+		              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+		              :class => 'btn btn-danger' %>
+		</div>
+	</div></div>
+</div>

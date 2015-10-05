@@ -1,59 +1,68 @@
-<div class = "span-24 box">
-	<%= form_for(@question) do |f| %>
-	  <% if @question.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-	
-	      <ul>
-	      <% @question.errors.full_messages.each do |msg| %>
-	        <li><%= msg %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-	
-	  <div class="field">
-	    <%= f.label :question %><br />
-	    <%= f.text_field :question %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :answer %><br />
-	    <%= f.text_field :answer %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :product %><br />
-	    <%= f.number_field :product %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :priority %><br />
-	    <%= f.number_field :priority %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :user %><br />
-	    <%= f.number_field :user %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :questiontype %><br />
-	    <%= f.text_field :questiontype %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :favorite %><br />
-	    <%= f.check_box :favorite %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :accellink %><br />
-	    <%= f.check_box :accellink %>
-	  </div>
-	  	  <div class="field">
-	    <%= f.label :hardielink %><br />
-	    <%= f.check_box :hardielink %>
-	  </div>
-	  	  <div class="field">
-	    <%= f.label :youtubelink %><br />
-	    <%= f.check_box :youtubelink %>
-	  </div>
-	  <div class="actions">
-	    <%= f.submit %>
-	  </div>
-	<% end %>
-</div><!--End Span-24.-->
+<%= form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :question, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :question, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :answer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :answer, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :product, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :product, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :priority, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :priority, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :user, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :questiontype, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :questiontype, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :favorite, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :favorite, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :accellink, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :accellink, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hardielink, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hardielink, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :youtubelink, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :youtubelink, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                questions_path, :class => 'btn' %>
+  </div>
+<% end %>

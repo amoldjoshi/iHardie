@@ -1,35 +1,32 @@
-<div class = "span-24 box">
-<%= form_for(@inquiry) do |f| %>
-  <% if @inquiry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@inquiry.errors.count, "error") %> prohibited this inquiry from being saved:</h2>
-
-      <ul>
-      <% @inquiry.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @inquiry, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :inquiry, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :inquiry, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :user, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :user, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :actiontaken, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :actiontaken, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :question, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :question, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :inquiry %><br />
-    <%= f.text_field :inquiry %>
-  </div>
-  <div class="field">
-    <%= f.label :user %><br />
-    <%= f.number_field :user %>
-  </div>
-  <div class="field">
-    <%= f.label :actiontaken %><br />
-    <%= f.check_box :actiontaken %>
-  </div>
-  <div class="field">
-    <%= f.label :question %><br />
-    <%= f.number_field :question %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                inquiries_path, :class => 'btn' %>
   </div>
 <% end %>
-</div>

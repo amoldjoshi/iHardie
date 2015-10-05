@@ -1,43 +1,44 @@
-<!--<h1>Listing comments</h1>-->
-<div class= "column span-24"> 	
- 	<div class = "span-24 last box">
-       		<%=render 'layouts/menu' %>
-	</div><!--End span-24 box.-->
-	
-	<div class = "span-24 last box">
-	<table>
-	  <tr>
-	    <th>Comment</th>
-	    <th>User</th>
-	    <th>Questionid</th>
-	    <th>Accepted</th>
-	    <th>Feedback</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
-	
-	<% @comments.each do |comment| %>
-	  <tr class= "<%= cycle("rowA", "rowB")%>">
-	    <td><%= comment.comment %></td>
-	    <td><%= comment.user %></td>
-	    <td><%= comment.questionID %></td>
-	    <td><%= comment.accepted %></td>
-	    <td><%= comment.feedback %></td>
-		<%if can? :update, comment%>
-		    <td><%= link_to 'Show', comment %></td>
-		    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-		<%end%>
-		
-		<%if can? :update, comment%>
-	    	<td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	    <%end%>
-	  </tr>
-	<% end %>
-	</table>
-	
-	<br />
-	<%= link_to 'New Comment', new_comment_path %>
-	
-	</div><!--End span-24 box.-->
-</div><!--End span-24 box.-->
+<%- model_class = Comment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:comment) %></th>
+      <th><%= model_class.human_attribute_name(:user) %></th>
+      <th><%= model_class.human_attribute_name(:questionID) %></th>
+      <th><%= model_class.human_attribute_name(:accepted) %></th>
+      <th><%= model_class.human_attribute_name(:feedback) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= link_to comment.id, comment_path(comment) %></td>
+        <td><%= comment.comment %></td>
+        <td><%= comment.user %></td>
+        <td><%= comment.questionID %></td>
+        <td><%= comment.accepted %></td>
+        <td><%= comment.feedback %></td>
+        <td><%=l comment.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_comment_path(comment), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      comment_path(comment),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_comment_path,
+            :class => 'btn btn-primary' %>

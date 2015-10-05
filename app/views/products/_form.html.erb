@@ -1,36 +1,32 @@
-<div class = "span-24 box">
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :sku, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sku, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :installinstruction, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installinstruction, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :video, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :video, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
   </div>
-  <div class="field">
-    <%= f.label :sku %><br />
-    <%= f.text_field :sku %>
-  </div>
-  <div class="field">
-    <%= f.label :installinstruction %><br />
-    <%= f.text_field :installinstruction %>
-  </div>
-  <div class="field">
-    <%= f.label :video %><br />
-    <%= f.text_field :video %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  
-</div>
 <% end %>

@@ -1,0 +1,29 @@
+<nav class="navbar" "navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			   
+		<div class="nav-collapse collapse">  
+			<ul class="nav">
+				<div class="row">
+					<div class="span7">
+						<%= link_to_unless_current "Home",   root_path %> ||
+					    <%= link_to_unless_current "About",	 about_path %> ||
+					    <%= link_to_unless_current "Contact",contact_path %>
+					</div>
+					<div class="span4">	
+						<%if user_signed_in?%> Welcome: <%=current_user.email%>. Not you?
+			        	<%=link_to "Sign out", destroy_user_session_path, :method => :delete %> 
+			    		<%else%>
+			        	<%=link_to "Sign up", new_user_registration_path%> or <%=link_to "Sign in", new_user_session_path%>
+			    		<%end%>	    		
+		    		</div>
+				</div>
+	      </div><!--End container.-->
+	    </div><!-- nav var inner -->
+    </div>	<!--navbar.-->
+</div><!--End header.-->

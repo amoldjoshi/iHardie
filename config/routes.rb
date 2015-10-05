@@ -22,10 +22,6 @@ IHardie::Application.routes.draw do
   resources :comments
   resources :questions
   resources :inquiries
-   
-  get "welcome/show"
-  root :to => "welcome#show"
-  get 'welcome/autocomplete_question_question'
   
   #resources :welcomes do
     #get :autocomplete_question_question, :on => :collection

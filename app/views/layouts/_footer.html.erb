@@ -1,10 +1,22 @@
-	<div id= "footer"><!--Start footer.-->
-			<div class = "span-24">
-				<%= link_to_unless_current "Home",     root_path %> |
-		        <%= link_to_unless_current "About",	   about_path %> |
-		        <%= link_to_unless_current "Contact",  contact_path %> |
-		        <%= link_to_unless_current "Terms and Condition",  terms_path %>
-		        
-
-       		 </div><!--End of Spand-22-->
-	</div><!--End Footer.-->
+<nav class="navbar" "navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a> 
+			<div class="nav-collapse collapse">  
+				<ul class="nav pull-right">
+					<div class="row">
+						<div class="span2">
+						<%= link_to_unless_current "Home",     root_path %> ||
+				        <%= link_to_unless_current "About",	   about_path %> ||
+				        <%= link_to_unless_current "Contact",  contact_path %> 
+		    			</div>
+					</div>
+				</ul>
+	      </div><!--End container.-->
+	    </div><!-- nav var inner -->
+    </div>	<!--navbar.-->
+</div><!--End header.-->

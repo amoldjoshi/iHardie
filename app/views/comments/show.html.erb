@@ -1,32 +1,29 @@
-<div class = "span-24 box">
-	<p id="notice"><%= notice %></p>
-	
-	<p>
-	  <b>Comment:</b>
-	  <%= @comment.comment %>
-	</p>
-	
-	<p>
-	  <b>User:</b>
-	  <%= @comment.user %>
-	</p>
-	
-	<p>
-	  <b>Questionid:</b>
-	  <%= @comment.questionID %>
-	</p>
-	
-	<p>
-	  <b>Accepted:</b>
-	  <%= @comment.accepted %>
-	</p>
-	
-	<p>
-	  <b>Feedback:</b>
-	  <%= @comment.feedback %>
-	</p>
-	
-	
-	<%= link_to 'Edit', edit_comment_path(@comment) %> |
-	<%= link_to 'Back', comments_path %>
+<%- model_class = Comment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><%= @comment.comment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user) %>:</strong></dt>
+  <dd><%= @comment.user %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:questionID) %>:</strong></dt>
+  <dd><%= @comment.questionID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:accepted) %>:</strong></dt>
+  <dd><%= @comment.accepted %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:feedback) %>:</strong></dt>
+  <dd><%= @comment.feedback %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              comments_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_comment_path(@comment), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              comment_path(@comment),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
 </div>
